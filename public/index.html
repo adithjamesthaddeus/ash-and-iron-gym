@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ash & Iron Gym</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo" onclick="app.showHome()">
+                <i class="fas fa-dumbbell"></i> ASH <span>&</span> IRON
+            </a>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#" onclick="app.showHome()" class="active">Home</a></li>
+                <li id="nav-login"><a href="#" onclick="app.showLogin()">Portal</a></li>
+                <li id="nav-dashboard" style="display: none;"><a href="#" onclick="app.showDashboard()">Dashboard</a></li>
+                <li id="nav-logout" style="display: none;"><a href="#" onclick="app.logout()">Logout</a></li>
+            </ul>
+
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <div class="close-btn"><i class="fas fa-times"></i></div>
+        <ul class="mobile-links">
+            <li><a href="#" class="mobile-btn" onclick="app.showHome()">Home</a></li>
+            <li id="mobile-nav-login"><a href="#" class="mobile-btn" onclick="app.showLogin()">Login</a></li>
+            <li id="mobile-nav-dashboard" style="display: none;"><a href="#" class="mobile-btn" onclick="app.showDashboard()">Dashboard</a></li>
+            <li id="mobile-nav-logout" style="display: none;"><a href="#" class="mobile-btn" onclick="app.logout()">Logout</a></li>
+        </ul>
+        <button class="btn btn-primary mobile-join-btn" onclick="app.showSignup()">Join Now</button>
+    </div>
+
+    <!-- VIEWS -->
+    <main id="app-content">
+
+        <!-- 1. HOME VIEW (Full Brochure Site) -->
+        <section id="view-home" class="view section-active">
+            <!-- Hero Section -->
+            <header class="hero">
+                <div class="hero-overlay"></div>
+                <div class="container hero-container">
+                    <div class="hero-content">
+                        <div class="badge"><i class="fas fa-phone"></i> CALL US: 1-800-ASH-IRON</div>
+                        <h1 class="text-gradient">FORGE YOUR LEGACY</h1>
+                        <p class="motivational-quote">"Blood, sweat, and respect. First two you give, the last one you earn."</p>
+                        <p>Welcome to the most advanced fitness facility. Push your limits with top-tier equipment, specialized classes, and world-class personal trainers.</p>
+                        
+                        <div class="hero-cta">
+                            <button class="btn btn-primary" onclick="app.showSignup()">Become A Member <i class="fas fa-arrow-right"></i></button>
+                            <button class="btn btn-secondary" onclick="app.showLogin()">Member Portal</button>
+                        </div>
+
+                        <div class="stats-container">
+                            <div class="stat-box">
+                                <h3>24/7</h3>
+                                <p>Access</p>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="stat-box">
+                                <h3>5K+</h3>
+                                <p>Members</p>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="stat-box">
+                                <h3>50+</h3>
+                                <p>Trainers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Features Section -->
+            <section class="features section">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <h2 class="section-title">WHY CHOOSE <span class="text-gradient">ASH & IRON</span></h2>
+                        <p class="section-subtitle">We don't just provide equipment; we provide an ecosystem for success.</p>
+                    </div>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-dumbbell"></i></div>
+                            <h3>Premium Equipment</h3>
+                            <p>Train with industry-leading machinery and free weights from Rogue, Hammer Strength, and Eleiko.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                            <h3>High-Energy Classes</h3>
+                            <p>From CrossFit to HIIT and Pilates, our specialized classes keep your routine fresh and challenging.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-user-ninja"></i></div>
+                            <h3>Elite Trainers</h3>
+                            <p>Our certified personal trainers have decades of combined experience to guide and motivate you.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-spa"></i></div>
+                            <h3>Recovery Zone</h3>
+                            <p>Accelerate your recovery with cold plunges, saunas, massage therapy, and stretching areas.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Facilities Split Section -->
+            <section class="split-section section bg-darker">
+                <div class="container split-container">
+                    <div class="split-image-wrapper">
+                        <img src="assets/trainer.png" alt="Gym Trainer Coaching" class="split-image">
+                        <div class="experience-badge">
+                            <span class="years">10+</span>
+                            <span class="text">Years of<br>Excellence</span>
+                        </div>
+                    </div>
+                    <div class="split-content">
+                        <h2 class="section-title">TRAIN WITH THE <span class="text-gradient">BEST IN CLASS</span></h2>
+                        <p>Our elite coaching staff isn't just here to count your reps. They are dedicated to transforming your body, optimizing your nutrition, and building a foundation of strength that lasts a lifetime.</p>
+                        
+                        <ul class="benefit-list">
+                            <li><i class="fas fa-check-circle"></i> Customized Workout Plans</li>
+                            <li><i class="fas fa-check-circle"></i> 1-on-1 Nutrition Coaching</li>
+                            <li><i class="fas fa-check-circle"></i> Bi-Weekly Progress Tracking</li>
+                            <li><i class="fas fa-check-circle"></i> Form Correction & Injury Prevention</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing / Memberships -->
+            <section class="memberships section">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <h2 class="section-title">CHOOSE YOUR <span class="text-gradient">JOURNEY</span></h2>
+                        <p class="section-subtitle">Flexible plans tailored to your fitness goals with no hidden fees.</p>
+                    </div>
+                    
+                    <div class="pricing-grid">
+                        <!-- Pro Plan -->
+                        <div class="pricing-card">
+                            <div class="card-header">
+                                <h3>MONTHLY PLAN</h3>
+                                <div class="price">
+                                    <span class="currency">$</span>
+                                    <span class="amount">50</span>
+                                    <span class="period">/mo</span>
+                                </div>
+                                <p class="card-desc">Flexible tracking and access.</p>
+                            </div>
+                            <div class="card-body">
+                                <ul class="feature-checklist">
+                                    <li><i class="fas fa-check"></i> Access to Main Gym Floor</li>
+                                    <li><i class="fas fa-check"></i> Premium Locker Room</li>
+                                    <li><i class="fas fa-check"></i> Unlimited Group Classes</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer" style="margin-top: 2rem;">
+                                <button class="btn btn-outline fully-width" onclick="app.showSignup()">Enroll Now</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Elite Plan -->
+                        <div class="pricing-card popular text-center">
+                            <div class="popular-badge">Most Popular</div>
+                            <div class="card-header">
+                                <h3>YEARLY PLAN</h3>
+                                <div class="price">
+                                    <span class="currency">$</span>
+                                    <span class="amount">500</span>
+                                    <span class="period">/yr</span>
+                                </div>
+                                <p class="card-desc">The ultimate experience with no compromises.</p>
+                            </div>
+                            <div class="card-body" style="text-align: left;">
+                                <ul class="feature-checklist">
+                                    <li><i class="fas fa-check"></i> All Pro Features Included</li>
+                                    <li><i class="fas fa-check"></i> Full Recovery Zone Access</li>
+                                    <li><i class="fas fa-check"></i> Guest Privileges (2/month)</li>
+                                    <li><i class="fas fa-check"></i> Save Almost 20% compared to monthly</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer" style="margin-top: 2rem;">
+                                <button class="btn btn-primary fully-width" onclick="app.showSignup()">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </section> <!-- /HOME VIEW -->
+
+
+        <!-- 2. LOGIN VIEW -->
+        <section id="view-login" class="view">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <h2>Member / Admin Login</h2>
+                    <div id="login-alert" class="alert error">Invalid credentials</div>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text" id="login-username" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" id="login-password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary fully-width">Login</button>
+                    </form>
+                    <div style="text-align: center; margin-top: 1.5rem;">
+                        <span style="color: var(--clr-text-muted);">Don't have an account?</span> 
+                        <a href="#" onclick="app.showSignup()" style="color: var(--clr-primary); font-weight: 500;">Sign up.</a>
+                    </div>
+                </div>
+            </div>
+        </section> <!-- /LOGIN VIEW -->
+
+        <!-- 2.5 SIGNUP VIEW -->
+        <section id="view-signup" class="view">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <h2>Become a <span class="text-gradient">Member</span></h2>
+                    <div id="signup-alert" class="alert error">Signup failed</div>
+                    <form id="signup-form">
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text" id="signup-username" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" id="signup-password" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="text" id="signup-phone" required>
+                        </div>
+                        <div class="member-info-grid">
+                            <div class="form-group">
+                                <label>Height (cm)</label>
+                                <input type="number" step="0.1" id="signup-height">
+                            </div>
+                            <div class="form-group">
+                                <label>Weight (kg)</label>
+                                <input type="number" step="0.1" id="signup-weight">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary fully-width">Join Now</button>
+                    </form>
+                    <div style="text-align: center; margin-top: 1.5rem;">
+                        <span style="color: var(--clr-text-muted);">Already a member?</span> 
+                        <a href="#" onclick="app.showLogin()" style="color: var(--clr-primary); font-weight: 500;">Login here.</a>
+                    </div>
+                </div>
+            </div>
+        </section> <!-- /SIGNUP VIEW -->
+
+
+        <!-- 3. ADMIN DASHBOARD VIEW -->
+        <section id="view-admin" class="view dashboard">
+            <div class="container">
+                <div class="dashboard-header">
+                    <h2>SUPER ADMIN <span class="text-gradient">DASHBOARD</span></h2>
+                </div>
+                
+                <div class="admin-grid">
+                    <!-- Add Member Form -->
+                    <div class="auth-card" style="max-width: 100%;">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--clr-primary);">Add New Member</h3>
+                        <div id="admin-alert" class="alert"></div>
+                        <form id="add-member-form">
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input type="text" id="add-username" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="text" id="add-password" placeholder="Default: password123">
+                            </div>
+                            <div class="member-info-grid">
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="text" id="add-phone">
+                                </div>
+                                <div class="form-group">
+                                    <label>Expiry Date</label>
+                                    <input type="date" id="add-expiry">
+                                </div>
+                                <div class="form-group">
+                                    <label>Height (cm)</label>
+                                    <input type="number" step="0.1" id="add-height">
+                                </div>
+                                <div class="form-group">
+                                    <label>Weight (kg)</label>
+                                    <input type="number" step="0.1" id="add-weight">
+                                </div>
+                                <div class="form-group">
+                                    <label>Monthly Price ($)</label>
+                                    <input type="number" step="0.01" id="add-monthly">
+                                </div>
+                                <div class="form-group">
+                                    <label>Yearly Price ($)</label>
+                                    <input type="number" step="0.01" id="add-yearly">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary fully-width">Add Member</button>
+                        </form>
+                    </div>
+
+                    <!-- Member List -->
+                    <div class="member-list-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Username</th>
+                                    <th>Phone</th>
+                                    <th>Expiry</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="members-table-body">
+                                <!-- Populated via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 4. MEMBER DASHBOARD VIEW -->
+        <section id="view-member" class="view dashboard">
+            <div class="container">
+                <div class="dashboard-header">
+                    <h2>WELCOME, <span class="text-gradient" id="member-name">MEMBER</span></h2>
+                </div>
+
+                <div class="member-info-grid">
+                    <div class="info-card">
+                        <div class="info-label">Current Weight</div>
+                        <div class="info-val" id="mem-weight">-- kg</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">Height</div>
+                        <div class="info-val" id="mem-height">-- cm</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">Membership Expiry</div>
+                        <div class="info-val" id="mem-expiry">--</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">Contact Number</div>
+                        <div class="info-val" id="mem-phone">--</div>
+                    </div>
+                    <div class="info-card" style="grid-column: span 2;">
+                        <div class="info-label">Pricing Plan Enrolled</div>
+                        <div style="display: flex; gap: 2rem; margin-top: 1rem; align-items: center; flex-wrap: wrap;">
+                            <div>
+                                <span style="color: var(--clr-text-muted);">Monthly: </span> 
+                                <span style="font-size: 1.5rem; color: var(--clr-primary);" id="mem-monthly">$--</span>
+                            </div>
+                            <div>
+                                <span style="color: var(--clr-text-muted);">Yearly: </span> 
+                                <span style="font-size: 1.5rem; color: var(--clr-primary);" id="mem-yearly">$--</span>
+                            </div>
+                            <div style="margin-left: auto;">
+                                <select id="plan-select" style="padding: 0.5rem; font-family: var(--font-body); background: var(--clr-bg); color: white; border: 1px solid var(--clr-primary);">
+                                    <option value="monthly">Monthly Plan ($50)</option>
+                                    <option value="yearly">Yearly Plan ($500)</option>
+                                </select>
+                                <button type="button" class="btn btn-primary btn-small" onclick="app.enrollPlan()">Take Plan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gym Tracker UI -->
+                <div class="tracker-container" style="margin-top: 3rem;">
+                    <div class="auth-card" style="max-width: 100%;">
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.5rem;">
+                            <h3 style="color: var(--clr-primary);">Personal Gym Tracker</h3>
+                            <span style="color: var(--clr-text-muted);" id="tracker-progress">Workouts this month: 0</span>
+                        </div>
+                        <form id="tracker-form" style="display: flex; gap: 1rem; align-items: flex-end; margin-bottom: 2rem; flex-wrap: wrap;">
+                            <div class="form-group" style="flex: 1; min-width: 300px; margin-bottom: 0;">
+                                <label>Log Workout</label>
+                                <input type="text" id="tracker-input" required placeholder="What did you do today? (e.g. Bench Press 3x10)">
+                            </div>
+                            <div class="form-group" style="width: 150px; margin-bottom: 0;">
+                                <label>Date</label>
+                                <input type="date" id="tracker-date" required>
+                            </div>
+                            <div class="form-group" style="width: 120px; margin-bottom: 0;">
+                                <label>Weight (kg)</label>
+                                <input type="number" step="0.1" id="tracker-weight-update" placeholder="Opt.">
+                            </div>
+                            <button type="submit" class="btn btn-outline" style="padding: 1rem 2rem;">Log It</button>
+                        </form>
+
+                        <div class="tracker-history">
+                            <h4 style="margin-bottom: 1rem; color: var(--clr-text-muted);">Recent Logs</h4>
+                            <table class="data-table" style="background: var(--clr-bg);">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 150px;">Date</th>
+                                        <th>Workout Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tracker-logs-body">
+                                    <!-- Populated via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <a href="#" class="logo footer-logo">
+                        <i class="fas fa-dumbbell"></i> ASH<span>&</span>IRON
+                    </a>
+                    <p>Where iron meets will. We are a premium fitness community dedicated to building stronger bodies and sharper minds.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#" onclick="app.showHome()">Home</a></li>
+                        <li><a href="#" onclick="app.showSignup()">Sign Up</a></li>
+                        <li><a href="#" onclick="app.showLogin()">Login</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col contact-col">
+                    <h4>Visit Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Muscle Ave, Fitness City, FC 90210</li>
+                        <li><i class="fas fa-phone"></i> 1-800-ASH-IRON</li>
+                        <li><i class="fas fa-envelope"></i> info@ashandiron.com</li>
+                        <li><i class="fas fa-clock"></i> Open 24/7 for Members</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ash & Iron Gym. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js?v=6"></script>
+</body>
+</html>
