@@ -8,7 +8,7 @@ const path = require('path');
 const app = express();
 const db = new sqlite3.Database('./database.sqlite');
 const PORT = process.env.PORT || 3000;
-const SECRET_KEY = "SUPER_SECRET_KEY";
+const SECRET_KEY = process.env.JWT_SECRET || "SUPER_SECRET_KEY";
 
 app.use(express.json());
 app.use(cors());
