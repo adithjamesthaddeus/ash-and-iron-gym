@@ -1,4 +1,6 @@
 node_modules/
+*.sqlite
+.env
 .DS_Store
-database.sqlite
-*.env
+dist/
+build/
